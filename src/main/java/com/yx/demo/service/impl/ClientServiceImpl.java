@@ -23,7 +23,7 @@ public class ClientServiceImpl implements IClientService {
 	@Override
 	@HystrixCommand(fallbackMethod="getListByAllError")
 	public List<ClientModel> getListByAll() throws Exception {
-		
+		//int a=1/0;
 		return rt.getForObject(REST_URL_PREFIX+"/client/getListByAll", List.class);
 	}
 	
@@ -31,6 +31,7 @@ public class ClientServiceImpl implements IClientService {
 		ClientModel cm = new ClientModel();
 		cm.setClient_address("Hystrix......");
 		List<ClientModel> list=new ArrayList<ClientModel>();
+		list.add(cm);
 		return list;
 	}
 }

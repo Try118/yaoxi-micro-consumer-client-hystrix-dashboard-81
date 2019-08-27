@@ -1,6 +1,11 @@
 server:
   port: 81
 
+spring:
+   application:
+    name: yaoxi-micro-consumer-client-hystrix-dashboard-81
+
+
 eureka:
   client:
     service-url:
